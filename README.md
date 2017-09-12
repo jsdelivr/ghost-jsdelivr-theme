@@ -7,3 +7,9 @@ The Ghost theme for jsDelivr's blog
 ```
 $ nodemon current/index.js --watch content/themes/jsdelivr.com --ext hbs,js,css
 ```
+
+Compile SASS:
+
+```
+$ sass --watch scss:assets/styles
+```
