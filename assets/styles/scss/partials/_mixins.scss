@@ -1,0 +1,50 @@
+@mixin cf {
+    &:after {
+        content:"";
+        display:table;
+        clear:both;
+    }
+}
+
+@mixin mq($breakpoint, $media: all) {
+
+    // Change these values as required
+    $med: 960px;
+    $wide: 1200px;
+
+    @if $breakpoint == wide {
+        @media only #{$media} and (min-width: $wide) {
+            @content;
+        }
+    } @else if $breakpoint == med {
+        @media only #{$media} and (min-width: $med) and (max-width: $wide) {
+            @content;
+        }
+    } @else if $breakpoint == small {
+        @media only #{$media} and (max-width: $med - 1) {
+            @content;
+        }
+    }
+}
+
+@mixin placeholder ($color) {
+    &::-webkit-input-placeholder {
+        color: $color;
+    }
+
+    &:-moz-placeholder {
+        color: $color;
+    }
+
+    &::-moz-placeholder {
+        color: $color;
+    }
+
+    &:-ms-input-placeholder {
+        color: $color;
+    }
+
+    &:placeholder-shown {
+        color: $color;
+    }
+}

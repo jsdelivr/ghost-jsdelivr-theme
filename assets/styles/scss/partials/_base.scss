@@ -1,0 +1,21 @@
+p {
+    margin: 0;
+
+    article & + p {
+        margin-top: 2em;
+    }
+}
+
+a {
+    color: #ff5627;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+pre {
+    background: #E3E1E2;
+    padding: 1em;
+}

@@ -1,0 +1,219 @@
+.headshot {
+    margin-bottom: 15px;
+}
+
+.intro-blurb {
+    margin-bottom: 30px;
+}
+
+.social-footer {
+     .twitter:hover { color: #55acee;}
+     .github:hover { color: #333;}
+     .linkedin:hover {color: #0976b4;}
+     .rss:hover {color: #f26522;}
+ }
+
+.social {
+    text-align: center;
+
+    @include mq('small') {
+        width: 66%;
+        margin: 0;
+        margin-left: 33%;
+        text-align: left;
+    }
+    .twitter {color: #55acee;}
+    .github {color: #333;}
+    .linkedin {color: #0976b4;}
+    .rss {color: #f26522;}
+
+    .twitter:hover {background-color: #55acee; color: white;}
+    .github:hover {background-color: #333; color: white;}
+    .linkedin:hover {background-color: #0976b4; color: white;}
+    .rss:hover {background-color: #f26522; color: white;}
+
+
+
+    .social-link {
+        margin: 0 4.5px;
+
+        @include mq('small') {
+            margin: 0 17px;
+            font-size: 38px;
+            height: 35px;
+            width: 36px;
+            line-height: 34px;
+        }
+
+        @media (max-width: 550px) {
+            margin: 0 9px;
+        }
+
+        @media (max-width: 450px) {
+            margin: 0 4px;
+            font-size: 30px;
+        }
+
+        &:hover {
+
+            @include mq('small') {
+                color: currentcolor;
+                background: none;
+            }
+        }
+    }
+}
+
+.post {
+    padding-bottom: 40px;
+    border-bottom: 1px solid $divider-color;
+    margin-bottom: 40px;
+    background: white;
+    padding: 40px;
+    &:last-of-type {
+        border-bottom: none;
+    }
+}
+
+.post-meta {
+    @include cf;
+    color: $tags-color;
+    font-style: italic;
+    font-size: 14px;
+    margin-top: 30px;
+
+    a {
+        color: $tags-color;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.post-info {
+    float: left;
+}
+
+.post-comments {
+    float: right;
+}
+
+.pagination {
+    font-family: $alt-font-family;
+    text-align: center;
+    color: $tags-color;
+    // margin-bottom: 100px;
+}
+
+.social-footer .social-link {
+    color: $tags-color;
+}
+
+.social-link {
+    display: inline-block;
+    font-size: 19px;
+    height: 34px;
+    width: 37px;
+    line-height: 34px;   
+}
+
+
+
+.site-nav {
+    text-align: center;
+
+    a {
+        display: block;
+        width: 100%;
+        padding: 1em;
+        border-bottom: 1px solid $search-color;
+        color: $nav-color;
+
+        &:hover {
+            color: $nav-color-active;
+            border-bottom-color: $nav-color-active;
+            text-decoration: none;
+        }
+    }
+
+    input {
+        margin-top: 1em;
+        width: 100%;
+        background: transparent;
+        border: 1px solid $search-color;
+        line-height: $base-line-height;
+        appearance: none;
+        outline: none;
+        padding: 0.4em;
+        font-style: none;
+        color: #000;
+        border-color: d7d7d7;
+        @include placeholder(#000);
+
+        &+button {
+            color: #000;
+        }
+    }
+}
+
+.page-template .site-nav--link-about, .home-template .site-nav--link-blog {
+    font-weight: bold;
+    color: $nav-color-active;
+} 
+
+.search-submit {
+    position: absolute;
+    right: 0;
+    top: 1em;
+    background: none;
+    border: none;
+    color: $tags-color;
+    padding: 0.4em 1em;
+}
+
+.post-title {
+    margin-top: 0;
+    margin-bottom: 0.4em;
+
+    a {
+        color: $title-color;
+
+        &:hover {
+            color: #f26522;
+            text-decoration: none;
+        }
+    }
+}
+
+.search-results {
+    text-align: left;
+
+    h2 {
+        margin: 0;
+        line-height: 1;
+
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 10px;
+        font-style: italic;
+        color: $tags-color;
+        margin-bottom: 1em;
+    }
+
+    h4 {
+        font-size: 11px;
+        margin: 0;
+        margin-bottom: 1.5em;
+        color: $tags-color;
+        font-weight: 400;
+    }
+
+    a {
+        @include cf();
+        margin-bottom: 10px;
+        color: #000;
+    }
+}

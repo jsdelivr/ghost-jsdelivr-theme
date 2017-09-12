@@ -1,0 +1,38 @@
+$base-font-family: "Open Sans", "Helvetica Neue", "Helvetica", sans-serif;
+$alt-font-family: "Montserrat", "Helvetica Neue", "Helvetica", sans-serif;
+
+$base-font-size: 16px;
+$base-line-height: 1.6;
+
+$body-background: rgba(248, 248, 248, 1);
+
+$base-color: rgba(29, 28, 28, 1);
+$alt-color: rgba(41, 145, 189, 1);
+$post-color: rgba(77, 74, 74, 1);
+$tags-color: rgba(160, 156, 156, 1);
+$title-color: $base-color;
+$title-color-hover: $alt-color;
+$pagination-color: $tags-color;
+$divider-color: rgba(227, 226, 226, 1);
+$social-hover-background-color: rgba(0, 114, 188, 1);
+$nav-color-active: $alt-color;
+$nav-color: $base-color;
+$search-color: #D7D7D7;
+$footer-color: rgba(120, 116, 116, 1);
+
+$top-margin: 40px;
+
+$wide-width: 1170px;
+$column-width-wide: 65px;
+$gutter-width-wide: 30px;
+$column-num-wide: 12;
+
+$med-width: 940px;
+$column-width-med: 60px;
+$gutter-width-med: 20px;
+$column-num-med: 12;
+
+$small-width: 750px;
+$column-width-small: 100px;
+$gutter-width-small: 30px;
+$column-num-small: 6;
