@@ -4,5 +4,6 @@
 	"author": {
 		"name": "Dmitriy Akulov",
 		"email": "dak@prospectone.pl"
-	}
+	},
+	"keywords": [ "ghost-theme" ]
 }

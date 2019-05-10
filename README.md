@@ -2,14 +2,10 @@
 The Ghost theme for jsDelivr's blog
 
 
-## Running ghost locally for development
+### Compile SASS:
 
 ```
-$ nodemon current/index.js --watch content/themes/jsdelivr.com --ext hbs,js,css
+$ sass --watch assets/styles/scss:assets/styles
 ```
 
-Compile SASS:
-
-```
-$ sass --watch scss:assets/styles
-```
+To run ghost locally for development refer to https://docs.ghost.org/install/local/

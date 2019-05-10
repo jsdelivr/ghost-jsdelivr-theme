@@ -32,7 +32,6 @@
 
 .headshot {
     @include mq('small') {
-        border-radius: 50%;
         width: 33%;
         float: left;
         margin-right: 30px;
