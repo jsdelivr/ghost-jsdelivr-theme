@@ -231,8 +231,8 @@
 .kg-gallery-container {
     display: flex;
     flex-direction: column;
-    max-width: 1040px;
-    width: 100vw;
+    width: 100%;
+    margin: 20px 0;
 }
 
 .kg-gallery-row {
