@@ -5,5 +5,10 @@
 		"name": "Dmitriy Akulov",
 		"email": "dak@prospectone.pl"
 	},
-	"keywords": [ "ghost-theme" ]
+	"keywords": [
+		"ghost-theme"
+	],
+	"engines": {
+		"ghost-api": "v4"
+	}
 }
