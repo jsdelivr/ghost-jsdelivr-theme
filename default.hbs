@@ -45,6 +45,16 @@
 		<script>
 			$(".site-nav--search-input").ghostHunter({
 				results: ".search-results",
+				result_template: "<a href='\{{link}}' data-category='\{{category}}'><p><h2>\{{title}}</h2><h4>\{{pubDate}}</h4></p></a>",
+				onComplete: function() {
+					let res = $('.search-results > a').filter((index, element) => {
+						return $(element).data('category').toLowerCase().match('content');
+					});
+					let searchRes = $('.search-results > p');
+					let foundNum = parseInt(searchRes.text().match(/[0-9]+$/)[0]);
+					searchRes.text(searchRes.text().replace(/[0-9]+$/, foundNum - res.length));
+					res.remove();
+				}
 			});
 		</script>
 
