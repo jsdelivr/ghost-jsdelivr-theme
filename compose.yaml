@@ -1,0 +1,14 @@
+services:
+  ghost:
+    image: ghost:5.94-alpine
+    ports:
+      - "127.0.0.1:${GHOST_PORT:-2378}:2368"
+    environment:
+      NODE_ENV: development
+      url: "http://localhost:${GHOST_PORT:-2378}"
+    volumes:
+      - ghost-content:/var/lib/ghost/content
+      - .:/var/lib/ghost/content/themes/jsdelivr
+
+volumes:
+  ghost-content:
