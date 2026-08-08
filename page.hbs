@@ -1,12 +1,16 @@
 {{!< default}}
 
-{{! This is a page template. A page outputs content just like any other post, and has all the same
-    attributes by default, but you can also customise it to behave differently if you prefer. }}
-
-<main class="content" role="main">
+<main id="main-content" class="content content--page">
 	<article class="{{post_class}}">
 		{{#post}}
-			<h1 class="post-title">{{{title}}}</h1>
+			{{#match @page.show_title_and_feature_image}}
+				<h1 class="post-title">{{{title}}}</h1>
+				{{#if feature_image}}
+					<figure class="post-feature-image">
+						<img src="{{img_url feature_image size="l"}}" srcset="{{img_url feature_image size="m"}} 720w, {{img_url feature_image size="l"}} 1200w, {{img_url feature_image size="xl"}} 2000w" sizes="(max-width: 860px) 100vw, 790px" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}">
+					</figure>
+				{{/if}}
+			{{/match}}
 
 			<section class="post-content">
 				{{content}}

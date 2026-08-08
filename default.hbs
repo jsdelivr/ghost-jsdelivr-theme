@@ -1,41 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{@site.locale}}">
 	<head>
 		<meta charset="utf-8"/>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-
 		<title>{{meta_title}}</title>
-
-    <meta name="robots" content="noindex">
-		<meta name="HandheldFriendly" content="True"/>
+		<meta name="robots" content="noindex">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
 		<link rel="stylesheet" type="text/css" href="{{asset "styles/main.css"}}"/>
-		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700|Montserrat|Source+Code+Pro:400,700"/>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/fontawesome/4.3.0/css/font-awesome.min.css">
 
 		{{! Ghost outputs important style and meta data with this tag }}
 		{{ghost_head}}
 	</head>
 	<body class="{{body_class}}">
-		<div class="page-wrap">
-			<div class="page-content">
-				{{> "nav"}}
-				{{{body}}}
-
-			</div>
-
-			<footer class="site-footer">
-				<section class="copyright">
-					<ul class="footer-list">
-						<li>&copy; jsdelivr.com, 2012 - {{date format="YYYY"}}; designed, developed, and maintained by <a href="https://prospectone.io/" target="_blank">Prospect One</a></li>
-					</ul>
-				</section>
-				<nav class="social-footer">
-					{{>links}}
-				</nav>
-			</footer>
+		<a class="skip-link" href="#main-content">Skip to content</a>
+		{{> "nav"}}
+		<div class="page-wrap{{#if statusCode}} page-wrap--error{{/if}}">
+			{{{body}}}
 		</div>
+
+		{{#if statusCode}}
+		{{else}}
+		<footer class="site-footer">
+			<div class="site-footer__inner">
+				<p class="copyright">&copy; jsdelivr.com, 2012–{{date format="YYYY"}}</p>
+				<nav class="footer-nav" aria-label="Footer navigation">
+					{{> "links"}}
+				</nav>
+			</div>
+		</footer>
+		{{/if}}
 
 		{{! Ghost outputs important scripts and data with this tag }}
 		{{ghost_foot}}
@@ -45,25 +37,6 @@
 			if (window.hljs) {
 				window.hljs.highlightAll();
 			}
-		</script>
-
-		<script src="https://cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
-		<script src="{{asset "js/jquery.ghostHunter.min.js"}}"></script>
-
-		<script>
-			$(".site-nav--search-input").ghostHunter({
-				results: ".search-results",
-				result_template: "<a href='\{{link}}' data-category='\{{category}}'><p><h2>\{{title}}</h2><h4>\{{pubDate}}</h4></p></a>",
-				onComplete: function() {
-					let res = $('.search-results > a').filter((index, element) => {
-						return $(element).data('category').toLowerCase().match('content');
-					});
-					let searchRes = $('.search-results > p');
-					let foundNum = parseInt(searchRes.text().match(/[0-9]+$/)[0]);
-					searchRes.text(searchRes.text().replace(/[0-9]+$/, foundNum - res.length));
-					res.remove();
-				}
-			});
 		</script>
 	</body>
 </html>

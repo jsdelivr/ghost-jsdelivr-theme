@@ -1,31 +1,16 @@
 {{!< default}}
 
-{{! The comment above "< default" means - insert everything in this file into
-    the {body} of the default.hbs template, which contains our header/footer. }}
-
-{{! The big featured header on the homepage, with the site logo and description }}
-
-{{! The main content area on the homepage }}
-<main class="content" role="main">
-	<header class="tag-archive-header">
-		<h1>{{tag.name}}</h1>
+<main id="main-content" class="content content--archive">
+	<header class="archive-header">
+		<p class="eyebrow">Topic</p>
+		<h1>{{#match tag.slug "announcement"}}Announcements{{else}}{{#match tag.slug "tutorial"}}Tutorials{{else}}{{tag.name}}{{/match}}{{/match}}</h1>
+		{{#if tag.description}}<p>{{tag.description}}</p>{{/if}}
 	</header>
-
-	{{! Each post will be output using this markup }}
-	{{#foreach posts}}
-		<article class="{{post_class}}">
-			<header class="post-header">
-				<h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-
-				<span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> {{tags prefix="on "}}</span>
-			</header>
-
-			<section class="post-excerpt">
-				<p>{{excerpt}}&hellip;</p>
-			</section>
-		</article>
-	{{/foreach}}
-
-	{{!! After all the posts, we have the previous/next pagination links }}
+	<h2 id="topic-articles" class="screen-reader">Articles</h2>
+	<section class="post-feed" aria-labelledby="topic-articles">
+		{{#foreach posts}}
+			{{> "post-card" priority=@first}}
+		{{/foreach}}
+	</section>
 	{{pagination}}
 </main>
