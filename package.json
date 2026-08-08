@@ -5,10 +5,17 @@
 		"name": "Dmitriy Akulov",
 		"email": "dak@prospectone.pl"
 	},
+	"scripts": {
+		"ghost:pull-content": "node scripts/pull-public-content.mjs",
+		"ghost:setup": "npm run ghost:pull-content && npm run ghost:start && node scripts/setup-local-ghost.mjs",
+		"ghost:start": "docker compose up -d",
+		"ghost:stop": "docker compose stop",
+		"ghost:logs": "docker compose logs -f ghost"
+	},
 	"keywords": [
 		"ghost-theme"
 	],
-	"config":{
+	"config": {
 		"posts_per_page": 5,
 		"card_assets": true
 	}
