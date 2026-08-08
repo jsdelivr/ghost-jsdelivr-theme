@@ -6,6 +6,8 @@
 		"email": "dak@prospectone.pl"
 	},
 	"scripts": {
+		"build": "sass assets/styles/scss/main.scss assets/styles/main.css",
+		"dist": "npm run build && node -e \"require('fs').mkdirSync('dist', { recursive: true })\" && bestzip dist/jsdelivr.zip \"*.hbs\" assets partials package.json",
 		"ghost:pull-content": "node scripts/pull-public-content.mjs",
 		"ghost:setup": "npm run ghost:pull-content && npm run ghost:start && node scripts/setup-local-ghost.mjs",
 		"ghost:start": "docker compose up -d",
@@ -15,6 +17,10 @@
 	"keywords": [
 		"ghost-theme"
 	],
+	"devDependencies": {
+		"bestzip": "3.0.2",
+		"sass": "1.102.0"
+	},
 	"config": {
 		"posts_per_page": 5,
 		"card_assets": true
