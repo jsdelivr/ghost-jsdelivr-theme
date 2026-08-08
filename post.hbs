@@ -7,7 +7,7 @@
 				<h1 class="post-title">{{{title}}}</h1>
 				<div class="post-card__meta post-header__meta">
 					<span class="topic-badge">
-						{{#has tag="announcement"}}Announcements{{else}}{{#has tag="tutorial"}}Tutorial{{else}}{{#if primary_tag}}{{primary_tag.name}}{{else}}jsDelivr{{/if}}{{/has}}{{/has}}
+						{{#has tag="announcement"}}Announcements{{else}}{{#has tag="tutorial"}}Tutorials{{else}}{{#if primary_tag}}{{primary_tag.name}}{{else}}jsDelivr{{/if}}{{/has}}{{/has}}
 					</span>
 					<span class="post-header__authors">By {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{#unless @last}}, {{/unless}}{{/foreach}}</span>
 					<span aria-hidden="true">·</span>

@@ -1764,6 +1764,27 @@ summary:focus-visible {
   border-radius: 10px;
 }
 
+.post-content blockquote {
+  margin-right: 0;
+  margin-left: 0;
+  padding: 2px 0 2px 18px;
+  border-left: 3px solid var(--jsd-orange);
+  border-radius: 0;
+  background: transparent;
+  color: var(--jsd-ink);
+  font-style: normal;
+  text-align: left;
+}
+
+.post-content blockquote > * {
+  margin: 0;
+  text-align: left;
+}
+
+.post-content blockquote > * + * {
+  margin-top: 0.75em;
+}
+
 .post-content pre {
   border-radius: 8px;
 }
@@ -1777,7 +1798,12 @@ summary:focus-visible {
   padding: 0.12em 0.35em;
   border-radius: 4px;
   background: var(--jsd-soft-orange);
+  box-decoration-break: clone;
   color: #b83c1e;
+  font-size: 0.9em;
+  font-weight: 500;
+  line-height: 1.4;
+  -webkit-box-decoration-break: clone;
 }
 
 .post-content a,
@@ -1797,6 +1823,7 @@ summary:focus-visible {
 }
 
 .post-template .site-footer,
+.page-template .site-footer,
 .home-template .site-footer,
 .paged .site-footer,
 .tag-template .site-footer,

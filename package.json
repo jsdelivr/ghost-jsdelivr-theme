@@ -7,7 +7,7 @@
 	},
 	"scripts": {
 		"build": "sass assets/styles/scss/main.scss assets/styles/main.css",
-		"dist": "npm run build && mkdir -p dist && bestzip dist/ghost-jsdelivr-theme.zip \"*.hbs\" assets partials package.json",
+		"dist": "npm run build && mkdir -p dist && rm -f dist/ghost-jsdelivr-theme.zip && bestzip dist/ghost-jsdelivr-theme.zip \"*.hbs\" assets partials package.json",
 		"ghost:pull-content": "node scripts/pull-public-content.mjs",
 		"ghost:setup": "npm run ghost:pull-content && npm run ghost:start && node scripts/setup-local-ghost.mjs",
 		"ghost:start": "docker compose up -d",
