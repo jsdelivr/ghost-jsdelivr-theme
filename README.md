@@ -2,10 +2,24 @@
 The Ghost theme for jsDelivr's blog
 
 
-### Compile SASS:
+### Build and package
 
+Compile the theme styles:
+
+```sh
+npm run build
 ```
-$ sass --watch assets/styles/scss:assets/styles
+
+Compile the styles and create a Ghost-installable archive at `dist/ghost-jsdelivr-theme.zip`:
+
+```sh
+npm run dist
+```
+
+For continuous Sass compilation while editing styles:
+
+```sh
+npx sass --watch assets/styles/scss:assets/styles
 ```
 
 ### Local Ghost preview
