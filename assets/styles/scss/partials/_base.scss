@@ -15,7 +15,94 @@ a {
     }
 }
 
+code {
+    padding: 2px 4px;
+    border-radius: 4px;
+    background: #F9F2F4;
+    color: #C7254E;
+    font-family: "Source Code Pro", Menlo, Monaco, Consolas, "Courier New", monospace;
+    font-size: 0.875em;
+}
+
 pre {
-    background: #E3E1E2;
-    padding: 1em;
+    margin: 1.5em 0;
+    padding: 20px;
+    overflow-x: auto;
+    border-radius: 4px;
+    background: #F3F5F7;
+    color: #5C667A;
+    font-family: "Source Code Pro", Menlo, Monaco, Consolas, "Courier New", monospace;
+    font-size: 14px;
+    line-height: 20px;
+    tab-size: 4;
+
+    code {
+        display: block;
+        padding: 0;
+        border-radius: 0;
+        background: transparent;
+        color: inherit;
+        font: inherit;
+        white-space: pre;
+    }
+}
+
+.hljs {
+    color: #5C667A;
+    background: transparent;
+}
+
+.hljs-comment,
+.hljs-quote {
+    color: #7C8493;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+    color: #D73A49;
+}
+
+.hljs-string,
+.hljs-doctag,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute {
+    color: #22863A;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+    color: #005CC5;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-type,
+.hljs-built_in {
+    color: #6F42C1;
+}
+
+.hljs-meta,
+.hljs-name,
+.hljs-tag {
+    color: #E36209;
+}
+
+.hljs-deletion {
+    color: #B31D28;
+    background: #FFEEF0;
+}
+
+.hljs-emphasis {
+    font-style: italic;
+}
+
+.hljs-strong {
+    font-weight: 700;
 }
