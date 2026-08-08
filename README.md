@@ -21,7 +21,7 @@ Create a snapshot of the public jsDelivr blog content, start Ghost, create the l
 npm run ghost:setup
 ```
 
-The command prints the generated local admin credentials and stores them in the ignored `.ghost-local/admin.json` file. Open http://localhost:2378 to preview the theme or http://localhost:2378/ghost to use Ghost Admin. Re-running the command keeps the existing local owner and skips the import when the public fixture is already present.
+The command prints the generated local admin credentials and stores them in the ignored `.ghost-local/admin.json` file. Open http://localhost:2378 to preview the theme or http://localhost:2378/ghost to use Ghost Admin. The command always fetches the latest public fixture. Re-running it keeps the existing local owner and skips the import when the fixture matches the previously imported content. If the fixture has changed, the command exits; run `docker compose down -v` before running the setup again.
 
 The repository is mounted directly as the theme, so edits to existing theme files are available without rebuilding the container. If a newly added theme file is not detected, restart Ghost.
 
