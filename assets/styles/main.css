@@ -1387,6 +1387,34 @@ summary:focus-visible {
   flex: none;
 }
 
+.site-socials {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  min-height: 40px;
+  border-radius: 50%;
+  color: var(--jsd-ink);
+  text-decoration: none;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+  background: var(--jsd-soft-orange);
+  color: var(--jsd-orange);
+  text-decoration: none;
+}
+
+.site-socials__label {
+  display: none;
+}
+
 .mobile-menu {
   display: none;
 }
@@ -2027,7 +2055,8 @@ summary:focus-visible {
     animation: mobile-menu-enter 180ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
   }
   .mobile-menu nav > a:not(.mobile-menu__cta),
-  .mobile-menu__search {
+  .mobile-menu__search,
+  .mobile-menu__socials a {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -2046,11 +2075,20 @@ summary:focus-visible {
   }
   .mobile-menu nav > a:not(.mobile-menu__cta):hover,
   .mobile-menu__search:hover,
-  .mobile-menu nav > a[aria-current=page],
-  .tag-announcement .mobile-menu a[href$="/tag/announcement/"],
-  .tag-tutorial .mobile-menu a[href$="/tag/tutorial/"] {
+  .mobile-menu__socials a:hover,
+  .mobile-menu nav > a[aria-current=page] {
     background: var(--jsd-soft-orange);
     color: var(--jsd-orange);
+  }
+  .mobile-menu__socials {
+    display: grid;
+    gap: 0;
+  }
+  .mobile-menu__socials a {
+    border-radius: 0;
+  }
+  .mobile-menu__socials .site-socials__label {
+    display: inline;
   }
   .mobile-menu__cta {
     width: max-content;
@@ -2149,6 +2187,23 @@ summary:focus-visible {
     padding: 24px 20px 32px;
     border: 0;
     border-radius: 0;
+  }
+  .content--post .post-title {
+    font-size: 28px;
+  }
+  .post-feature-image,
+  .content--post .post-content {
+    margin-top: 20px;
+  }
+  .post-header__meta {
+    gap: 6px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    background: var(--jsd-background);
+  }
+  .post-header__meta .topic-badge,
+  .post-header__meta .topic-badge + [aria-hidden=true] {
+    display: none;
   }
   .post-content {
     hyphens: auto;
