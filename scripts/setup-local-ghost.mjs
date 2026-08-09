@@ -279,6 +279,22 @@ const activateTheme = async cookie => {
 	console.log('Activated the jsDelivr theme.');
 };
 
+const disablePortalButton = async cookie => {
+	await adminRequest(cookie, '/ghost/api/admin/settings/', {
+		method: 'PUT',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify({
+			settings: [{
+				key: 'portal_button',
+				value: false,
+			}],
+		}),
+	});
+	console.log('Disabled the local Portal button.');
+};
+
 const verifyHomepage = async cookie => {
 	const [latestPost] = await browsePosts(cookie, {
 		fields: 'slug',
@@ -333,6 +349,7 @@ const main = async () => {
 	}
 
 	await activateTheme(cookie);
+	await disablePortalButton(cookie);
 	await verifyHomepage(cookie);
 
 	console.log(`Local Ghost is ready at ${ghostUrl}`);

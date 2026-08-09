@@ -7,7 +7,7 @@
 	},
 	"scripts": {
 		"build": "sass assets/styles/scss/main.scss assets/styles/main.css",
-		"dist": "npm run build && mkdir -p dist && bestzip dist/ghost-jsdelivr-theme.zip \"*.hbs\" assets partials package.json",
+		"dist": "npm run build && mkdir -p dist && rm -f dist/ghost-jsdelivr-theme.zip && bestzip dist/ghost-jsdelivr-theme.zip \"*.hbs\" assets partials package.json",
 		"ghost:pull-content": "node scripts/pull-public-content.mjs",
 		"ghost:setup": "npm run ghost:pull-content && npm run ghost:start && node scripts/setup-local-ghost.mjs",
 		"ghost:start": "docker compose up -d",
@@ -22,7 +22,13 @@
 		"sass": "1.102.0"
 	},
 	"config": {
-		"posts_per_page": 5,
-		"card_assets": true
+		"posts_per_page": 6,
+		"card_assets": true,
+		"image_sizes": {
+			"s": { "width": 360 },
+			"m": { "width": 720 },
+			"l": { "width": 1200 },
+			"xl": { "width": 2000 }
+		}
 	}
 }

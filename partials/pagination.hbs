@@ -1,10 +1,9 @@
 <footer class="pagination">
 	{{#if prev}}
-		<a class="newer-posts" href="{{page_url prev}}"><i class="fa fa-chevron-left"></i></a>
+		<a class="pagination__link newer-posts" href="{{page_url prev}}" aria-label="Newer articles">← Newer</a>
 	{{/if}}
-
-	<span class="page-number">Page {{ page }} of {{ pages }}</span>
+	<span class="page-number" aria-current="page">Page {{page}} of {{pages}}</span>
 	{{#if next}}
-		<a class="older-posts" href="{{page_url next}}"><i class="fa fa-chevron-right"></i></a>
+		<a class="pagination__link older-posts" href="{{page_url next}}" aria-label="Older articles">Older →</a>
 	{{/if}}
 </footer>

@@ -1,0 +1,32 @@
+<article class="post-card">
+	<a class="post-card__link" href="{{url}}">
+		<h3 class="post-card__title">{{{title}}}</h3>
+		<span class="post-card__image{{#unless feature_image}} post-card__image--placeholder{{/unless}}">
+			{{#if feature_image}}
+				<img
+					src="{{img_url feature_image size="m"}}"
+					srcset="{{img_url feature_image size="s"}} 360w, {{img_url feature_image size="m"}} 720w, {{img_url feature_image size="l"}} 1200w, {{img_url feature_image size="xl"}} 2000w"
+					sizes="(max-width: 700px) calc(100vw - 68px), (max-width: 1279px) 726px, (max-width: 1320px) calc((100vw - 192px) / 2), 560px"
+					alt=""
+					loading="{{#if priority}}eager{{else}}lazy{{/if}}"
+					fetchpriority="{{#if priority}}high{{else}}auto{{/if}}"
+					width="1200"
+					height="450">
+			{{else}}
+				<span class="post-card__placeholder" aria-hidden="true">
+					<img src="{{asset "img/jsdelivr-icon.svg"}}" width="32" height="34" alt="">
+				</span>
+			{{/if}}
+		</span>
+		<p class="post-card__excerpt">{{excerpt words="60"}}</p>
+		<div class="post-card__meta">
+			<span class="topic-badge">
+				{{#if primary_tag}}{{primary_tag.name}}{{else}}jsDelivr{{/if}}
+			</span>
+			<span aria-hidden="true">·</span>
+			<time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
+			<span aria-hidden="true">·</span>
+			<span>{{reading_time}}</span>
+		</div>
+	</a>
+</article>
