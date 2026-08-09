@@ -6,6 +6,13 @@
 		</a>
 
 		<div class="site-header__controls">
+			<nav class="site-nav site-nav--desktop" aria-label="Primary navigation">
+				<a href="{{@site.url}}"{{#is "home"}} aria-current="page"{{/is}}>Latest</a>
+				<a href="{{@site.url}}/tag/announcements/"{{#is "tag"}}{{#match tag.slug "announcements"}} aria-current="page"{{/match}}{{/is}}>Announcements</a>
+				<a href="{{@site.url}}/tag/product-updates/"{{#is "tag"}}{{#match tag.slug "product-updates"}} aria-current="page"{{/match}}{{/is}}>Product updates</a>
+				<a href="{{@site.url}}/tag/guides/"{{#is "tag"}}{{#match tag.slug "guides"}} aria-current="page"{{/match}}{{/is}}>Guides</a>
+			</nav>
+
 			<div class="site-actions">
 				<button class="icon-button site-actions__desktop" type="button" data-ghost-search aria-label="Search the blog">
 					<svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
@@ -19,7 +26,10 @@
 						<span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
 					</summary>
 					<nav aria-label="Mobile navigation">
-						<a href="{{@site.url}}"{{#is "home"}} aria-current="page"{{/is}}>Blog home</a>
+						<a href="{{@site.url}}"{{#is "home"}} aria-current="page"{{/is}}>Latest</a>
+						<a href="{{@site.url}}/tag/announcements/"{{#is "tag"}}{{#match tag.slug "announcements"}} aria-current="page"{{/match}}{{/is}}>Announcements</a>
+						<a href="{{@site.url}}/tag/product-updates/"{{#is "tag"}}{{#match tag.slug "product-updates"}} aria-current="page"{{/match}}{{/is}}>Product updates</a>
+						<a href="{{@site.url}}/tag/guides/"{{#is "tag"}}{{#match tag.slug "guides"}} aria-current="page"{{/match}}{{/is}}>Guides</a>
 						<button class="mobile-menu__search" type="button" data-ghost-search>
 							<svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
 								<circle cx="11" cy="11" r="7"></circle>
