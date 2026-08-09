@@ -1147,6 +1147,10 @@ body {
   line-height: 1.6;
 }
 
+body:has(#sodo-search-root > .gh-root-frame) {
+  margin-right: 0 !important;
+}
+
 button,
 input,
 select,
@@ -1307,8 +1311,7 @@ summary:focus-visible {
 }
 
 .site-nav a:hover,
-.site-nav a:focus-visible,
-.site-nav a[aria-current=page] {
+.site-nav a:focus-visible {
   color: var(--jsd-orange);
   text-decoration: none;
 }
