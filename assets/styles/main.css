@@ -1876,14 +1876,16 @@ summary:focus-visible {
 }
 
 .page-wrap.page-wrap--error {
+  display: flex;
+  flex: 1;
   width: 100%;
 }
 
 .error-page {
   display: grid;
   position: relative;
-  min-height: calc(100vh - 64px);
-  min-height: calc(100dvh - 64px);
+  flex: 1;
+  min-height: 0;
   margin: 0;
   overflow: hidden;
   background: linear-gradient(180deg, #ef5042, #f47b70 58%, #ffd5cf);
@@ -2192,10 +2194,6 @@ summary:focus-visible {
   }
   .pagination__link {
     padding: 9px;
-  }
-  .error-page {
-    min-height: calc(100vh - 64px);
-    min-height: calc(100dvh - 64px);
   }
   .error-page__actions {
     align-items: stretch;
