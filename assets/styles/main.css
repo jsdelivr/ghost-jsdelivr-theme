@@ -1186,7 +1186,7 @@ summary:focus-visible {
   height: 1px !important;
   padding: 0 !important;
   overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
+  clip-path: inset(50%) !important;
   border: 0 !important;
   white-space: nowrap !important;
 }
@@ -1424,7 +1424,7 @@ summary:focus-visible {
   width: 18px;
   height: 2px;
   border-radius: 2px;
-  background: currentColor;
+  background: currentcolor;
   transition: opacity 150ms, transform 150ms;
 }
 

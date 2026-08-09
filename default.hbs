@@ -17,8 +17,7 @@
 			{{{body}}}
 		</div>
 
-		{{#if statusCode}}
-		{{else}}
+		{{#unless statusCode}}
 		<footer class="site-footer">
 			<div class="site-footer__inner">
 				<p class="copyright">&copy; jsdelivr.com, 2012–{{date format="YYYY"}}</p>
@@ -27,7 +26,7 @@
 				</nav>
 			</div>
 		</footer>
-		{{/if}}
+		{{/unless}}
 
 		{{! Ghost outputs important scripts and data with this tag }}
 		{{ghost_foot}}
