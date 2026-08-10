@@ -688,12 +688,10 @@ summary:focus-visible {
     background: transparent;
     color: var(--jsd-ink);
     font-style: normal;
-    text-align: left;
 }
 
 .post-content blockquote > * {
     margin: 0;
-    text-align: left;
 }
 
 .post-content blockquote > * + * {
@@ -1127,7 +1125,7 @@ summary:focus-visible {
 
     .post-content {
         hyphens: auto;
-        hyphenate-limit-chars: 6 3 3;
+        hyphenate-limit-chars: 6 2 2;
     }
 
     .post-content .kg-width-wide,
