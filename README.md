@@ -1,6 +1,5 @@
-# ghost-jsdelivr-theme
-The Ghost theme for jsDelivr's blog
-
+# ghost-jsdelivr
+The Ghost theme and discussions for jsDelivr's blog
 
 ### Build and package
 
