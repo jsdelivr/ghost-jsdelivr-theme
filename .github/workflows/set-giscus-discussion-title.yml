@@ -1,0 +1,29 @@
+name: Set giscus discussion title
+
+on:
+  discussion:
+    types: [created]
+
+permissions:
+  contents: read
+  discussions: write
+
+jobs:
+  rename:
+    if: startsWith(github.event.discussion.title, 'jsdelivr-post-')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v7
+
+      - name: Install script dependencies
+        run: npm ci --prefix scripts --omit=dev
+
+      - name: Use the blog post title
+        uses: actions/github-script@v9
+        with:
+          github-token: ${{ secrets.DISCUSSION_TOKEN }}
+          script: |
+            const setGiscusDiscussionTitle = require('./scripts/set-giscus-discussion-title.js');
+            await setGiscusDiscussionTitle({ github, context, core });
