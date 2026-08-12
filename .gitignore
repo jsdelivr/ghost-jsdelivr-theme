@@ -3,3 +3,5 @@
 .ghost-local/
 node_modules/
 dist/
+assets/styles/main.css
+assets/styles/main.css.map
