@@ -1,9 +1,10 @@
 (async () => {
 	const loader = document.currentScript;
-	const { themeUrl, ...config } = loader.dataset;
+	const { themeUrl: themePath, ...config } = loader.dataset;
 	const giscusOrigin = 'https://giscus.app';
 	const shell = loader.previousElementSibling;
 	const count = shell?.querySelector('.giscus-comment-count');
+	const themeUrl = new URL(themePath.replace(/^\/assets\//, '../'), loader.src);
 	let theme = 'light';
 
 	window.addEventListener('message', (event) => {
