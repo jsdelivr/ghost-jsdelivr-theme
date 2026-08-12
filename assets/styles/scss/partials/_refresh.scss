@@ -662,6 +662,43 @@ summary:focus-visible {
     margin-top: 2rem;
 }
 
+.post-discussion {
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid var(--jsd-line);
+}
+
+.post-discussion > h2 {
+    margin: 0 0 24px;
+    color: var(--jsd-ink);
+    font-family: "Lexend", sans-serif;
+    font-size: 24px;
+    line-height: 1.25;
+}
+
+.post-discussion .giscus-shell,
+.post-discussion .giscus,
+.post-discussion .giscus-frame {
+    width: 100%;
+}
+
+.post-discussion .giscus-shell {
+    position: relative;
+}
+
+.post-discussion .giscus-comment-count {
+    position: absolute;
+    z-index: 1;
+    top: 4px;
+    left: 4px;
+    color: var(--jsd-ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    pointer-events: none;
+}
+
 .post-content h1,
 .post-content h2,
 .post-content h3,
